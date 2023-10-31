@@ -15,7 +15,12 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
+
+project/db-data/
 
 # Go workspace file
 go.work
+project/caddy.production.dockerfile
+project/Caddyfile.production
+project/swarm.production.yml
