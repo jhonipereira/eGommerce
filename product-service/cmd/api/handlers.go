@@ -155,6 +155,13 @@ func (app *Config) DeleteProductByID(w http.ResponseWriter, r *http.Request) {
 		app.errorJSON(w, err, http.StatusBadRequest)
 		return
 	}
+
+	payload := jsonResponse{
+		Error:   false,
+		Message: "deleted",
+	}
+
+	app.writeJSON(w, http.StatusAccepted, payload)
 }
 
 func (app *Config) InsertProduct(w http.ResponseWriter, r *http.Request) {
@@ -190,7 +197,7 @@ func (app *Config) InsertProduct(w http.ResponseWriter, r *http.Request) {
 
 	payload := jsonResponse{
 		Error:   false,
-		Message: "updated",
+		Message: "created",
 		Data:    product,
 	}
 
