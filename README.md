@@ -211,7 +211,7 @@ curl -i --request POST 'http://your-domain.com/handle' \
 {
   "error": false,
   "message": "message refering the action",
-  "data": "any data"
+  "data": "log/mail/auth/product objects"
 }
 ```
 
