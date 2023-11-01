@@ -1,8 +1,18 @@
-# eGommerce
+<div align="center">
+<pre>
+███████╗     ██████╗  ██████╗ ███╗   ███╗███╗   ███╗███████╗██████╗  ██████╗███████╗
+██╔════╝    ██╔════╝ ██╔═══██╗████╗ ████║████╗ ████║██╔════╝██╔══██╗██╔════╝██╔════╝
+█████╗█████╗██║  ███╗██║   ██║██╔████╔██║██╔████╔██║█████╗  ██████╔╝██║     █████╗  
+██╔══╝╚════╝██║   ██║██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══╝  ██╔══██╗██║     ██╔══╝  
+███████╗    ╚██████╔╝╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗██║  ██║╚██████╗███████╗
+╚══════╝     ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝
+                                                                                    
+</pre>
+</div>
 
 ## Overview
 
-This is personal project that will serve as a ecommerce service that I want to publish in the future as a real-world product :) It uses Go (Golang), and includes a variety of services, each serving a specific purpose, and a front-end application to interact with these services.
+This is personal project that will serve as a e-commerce service that I want to publish in the future as a real-world product :) It uses Go (Golang), and includes a variety of services, each serving a specific purpose, and a front-end application to interact with these services.
 
 ## Project Structure
 
@@ -30,7 +40,7 @@ This is personal project that will serve as a ecommerce service that I want to p
 1. Clone the repository:
 
     ```bash
-    git clone [<repository-url>](https://github.com/jhonipereira/eGommerce)
+    git clone [https://github.com/jhonipereira/eGommerce)](https://github.com/jhonipereira/eGommerce.git)
     ```
 
 2. If you use VS Code, open the file **workspace.code-workspace** directly from the file explorer to open the structure with workspaces. Follow the setup instructions in the `project` directory to configure Docker, Kubernetes, and other dependencies.
