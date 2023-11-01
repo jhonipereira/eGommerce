@@ -84,6 +84,137 @@ kubectl apply -f k8s
 minikube tunnel
 ```
 
+## API Requests
+
+### Broker Service
+
+| Endpoint    | HTTP Method | Description       |
+| ----------- | ----------- | ----------------- |
+| `/`         | `POST`      | Root endpoint     |
+| `/log-grpc` | `POST`      | Log item via gRPC |
+| `/handle`   | `POST`      | API Gateway       |
+
+### Authentication Service
+
+| Endpoint        | HTTP Method | Description |
+| --------------- | ----------- | ----------- |
+| `/authenticate` | `POST`      | User login  |
+
+### Logger Service
+
+| Endpoint | HTTP Method | Description |
+| -------- | ----------- | ----------- |
+| `/log`   | `POST`      | Write log   |
+
+### Mail Service
+
+| Endpoint | HTTP Method | Description |
+| -------- | ----------- | ----------- |
+| `/send`  | `POST`      | Send mail   |
+
+### Product Service
+
+| Endpoint                | HTTP Method | Description          |
+| ----------------------- | ----------- | -------------------- |
+| `/products/`            | `GET`       | Get all products     |
+| `/products/{name}`      | `GET`       | Get product by name  |
+| `/products/{id:[0-9]+}` | `GET`       | Get product by ID    |
+| `/products/`            | `PUT`       | Update product       |
+| `/products/{id:[0-9]+}` | `DELETE`    | Delete product by ID |
+| `/products/`            | `POST`      | Insert product       |
+
+## Test the broker endpoints API using curl
+
+#### 1. Root Endpoint
+
+| Endpoint | HTTP Method |  Description  |
+| -------- | :---------: | :-----------: |
+| `/`      |    `POST`   | Root endpoint |
+
+`Request`
+
+```bash
+curl -i --request POST 'http://your-domain.com/' 
+```
+
+`Response`
+
+```json
+{
+  "Error": false,
+  "Message": "Hit the broker"
+}
+```
+
+#### 2. Log Item via gRPC
+
+| Endpoint    | HTTP Method |    Description    |
+| ----------- | :---------: | :---------------: |
+| `/log-grpc` |    `POST`   | Log item via gRPC |
+
+`Request`
+
+```bash
+curl -i --request POST 'http://your-domain.com/log-grpc'
+```
+
+`Response`
+
+```json
+{
+  "Error": false,
+  "Message": "logged"
+}
+```
+
+#### 3. Handle Submission
+
+This is the main endpoint serving as an API Gateway for the entire service. It can receive and return multiple types of data. 
+The response of the request depends on the `action` that has been passed. e.g.: if the request action is "log", the response object is "log".
+
+| Endpoint  | HTTP Method | Description |
+| --------- | :---------: | :---------: |
+| `/handle` |    `POST`   | API Gateway |
+
+`Request`
+
+```bash
+curl -i --request POST 'http://your-domain.com/handle' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "action": "log / auth / mail / product",
+  "auth": {
+    "email": "email@email.com",
+    "password": "123456"
+  },
+  "log": {
+    "name": "user name",
+    "data": "some data"
+  },
+  "mail": {
+    "from": "from@address.com",
+    "to": "to@address.com",
+    "subject": "some subject",
+    "message": "the body of the email"
+  },
+  "product": {
+    "name": "Product name",
+    "description": "product description",
+    "photos": "[url-to-photo]"
+  },
+}'
+```
+
+`Response`
+
+```json
+{
+  "error": false,
+  "message": "message refering the action",
+  "data": "any data"
+}
+```
+
 ## Contributing
 
 Contributions to the project are welcome. Please follow the [contribution guidelines](CONTRIBUTING.md) for more information.
