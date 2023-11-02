@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: front-end
-        image: "jhonipereira/front-end:1.0.6"
+        image: "jhonipereira/front-end:1.0.7"
         env:
           - name: BROKER_URL
             value: "http://broker-service.info"

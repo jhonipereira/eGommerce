@@ -21,7 +21,7 @@ services:
       replicas: 1
 
   front-end:
-    image: jhonipereira/front-end:1.0.5
+    image: jhonipereira/front-end:1.0.7
     deploy:
       mode: replicated
       replicas: 1
