@@ -12,7 +12,7 @@
 
 ## Overview
 
-This is personal project that will serve as a e-commerce service that I want to publish in the future as a real-world product :) It uses Go (Golang), and includes a variety of services, each serving a specific purpose, and a front-end application to interact with these services.
+This is a personal project that simulates an e-commerce service that I want to publish in the future as a real-world product :) It uses Go (Golang), and includes a variety of services, each serving a specific purpose, and a front-end application to interact with these services. It also uses kubernetes to simulate a production environment locally.
 
 ## Project Structure
 
