@@ -31,7 +31,6 @@ func render(w http.ResponseWriter, t string) {
 	partials := []string{
 		"templates/base.layout.gohtml",
 		"templates/header.partial.gohtml",
-		"templates/footer.partial.gohtml",
 	}
 
 	var templateSlice []string
