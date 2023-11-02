@@ -7,6 +7,10 @@
 -- BEGIN TABLE public.products
 BEGIN;
 
+
+CREATE SEQUENCE user_id_seq START 1;
+CREATE SEQUENCE products_sampleid_seq START 1;
+
 CREATE TABLE IF NOT EXISTS public.products (
 	id bigint DEFAULT nextval('products_sampleid_seq'::regclass) NOT NULL,
 	name character(1) NOT NULL,

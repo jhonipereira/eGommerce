@@ -17,10 +17,13 @@
 # Dependency directories (remove the comment below to include it)
 vendor/
 
-
+project/db-data/postgres/
+project/db-data/postgres/*
 
 # Go workspace file
 go.work
+
 project/caddy.production.dockerfile
 project/Caddyfile.production
 project/swarm.production.yml
+
