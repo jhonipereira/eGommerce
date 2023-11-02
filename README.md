@@ -16,6 +16,7 @@ This is personal project that will serve as a e-commerce service that I want to 
 
 ## Project Structure
 
+![Architecture](arch.jpg)
 - `front-end`: The front-end application for interacting with the microservices.
 - `broker-service`: Acts as an API Gateway, routing requests to the appropriate services.
 - `project`: Contains configuration files and scripts for Docker, Makefile, Caddy, and Kubernetes (k8s).
@@ -211,7 +212,7 @@ curl -i --request POST 'http://your-domain.com/handle' \
 {
   "error": false,
   "message": "message refering the action",
-  "data": "any data"
+  "data": "log/mail/auth/product objects"
 }
 ```
 
